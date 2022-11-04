@@ -3,7 +3,7 @@
 This program solves Initial Value Problems (IVP).
 We support three numerical meothds: Euler, Rk2, and Rk4
 
-Author: Kuo-Chuan Pan, NTHU 2022.10.06
+Author: Yuan-Yen Peng (edited from Prof. Kuo-Chuan Pan, NTHU 2022.10.06)
 For the course, computational physics lab
 
 """
@@ -16,6 +16,7 @@ def solve_ivp(derive_func, y0, t, dt, N, method, args):
 
     :param derive_func: a function to describe the derivative of the desired function
     :param y0: an array. The initial state
+    :param: t: the instant time of the motion.
     :param dt: the step time
     :param N: the number of steps.
     :param method: string. Numerical method to compute. 
@@ -40,6 +41,7 @@ def _update(derive_func, y0, t, dt, method, *args):
 
     :param derive_func: the derivative of the function y'
     :param y0: the initial conditions at time t
+    :param: t: the instant time of the motion
     :param dt: the time step dt
     :param method: the numerical method
     :param *args: extral parameters for the derive_func
